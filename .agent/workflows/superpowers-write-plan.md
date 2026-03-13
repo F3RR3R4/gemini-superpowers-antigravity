@@ -29,6 +29,13 @@ If `{{input}}` is empty or missing, ask the user to restate the task in one sent
 Write the plan output to a unique timestamped file:
 1. Obtain current timestamp: `YYYY-MM-DDTHHMM`
 2. Target path: `.agent/artifacts/plans/plan-YYYY-MM-DDTHHMM.md`
+3. **Persist to Project Repository**:
+   - You MUST write this plan to the local repository: `.agent/artifacts/plans/plan-YYYY-MM-DDTHHMM.md`.
+   - Use the `write_to_file` tool.
+   - Example command check: `mkdir -p .agent/artifacts/plans && touch .agent/artifacts/plans/plan-2026-03-13T1250.md`.
+
+4. **Confirm to user**:
+   - Notify the user that the plan is ready for review in BOTH the sidebar and the project folder.
 
 Create the folder if needed.
 After writing, confirm it exists by listing `.agent/artifacts/plans/`.
