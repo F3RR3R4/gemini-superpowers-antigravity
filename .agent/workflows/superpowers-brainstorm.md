@@ -10,24 +10,16 @@ Brainstorm for this task (exactly as provided by the user):
 
 If `{{input}}` is empty or missing, ask the user to restate the task in one sentence and STOP.
 
-## Output sections (use exactly)
-## Goal
-## Constraints
-## Known context
-## Risks
-## Options (2–4)
-## Recommendation
 ## Acceptance criteria
 
 ## Persist (mandatory)
-After generating the brainstorm content, you MUST write it to disk using this exact procedure:
-
-1) Output the brainstorm markdown content first (the sections above).
-2) Then immediately run:
+Write the brainstorm output to a unique timestamped file:
+1. Obtain current timestamp: `YYYY-MM-DDTHHMM`
+2. Target path: `.agent/artifacts/brainstorms/plan-YYYY-MM-DDTHHMM-brainstorm.md`
 
 ```bash
-python .agent/skills/superpowers-workflow/scripts/write_artifact.py --path artifacts/superpowers/brainstorm.md
-
+# Example: python .agent/skills/superpowers-workflow/scripts/write_artifact.py --path .agent/artifacts/brainstorms/plan-2026-03-13T1200-brainstorm.md
+python .agent/skills/superpowers-workflow/scripts/write_artifact.py --path .agent/artifacts/brainstorms/plan-<TIMESTAMP>-brainstorm.md
 ```
 
 Provide the brainstorm markdown as stdin to the command.

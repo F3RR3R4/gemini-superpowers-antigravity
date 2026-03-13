@@ -14,14 +14,16 @@ Output:
 - Summary + next actions
 
 ## Persist (mandatory)
-After generating the review content above, you MUST write it to disk:
+Write the review output to a unique timestamped file:
+1. Obtain current timestamp: `YYYY-MM-DDTHHMM`
+2. Target path: `.agent/artifacts/reviews/review-YYYY-MM-DDTHHMM.md`
 
 1) Copy the full review markdown output.
 2) Run:
 
 ```bash
-python .agent/skills/superpowers-workflow/scripts/write_artifact.py --path artifacts/superpowers/review.md
-
+# Example: python .agent/skills/superpowers-workflow/scripts/write_artifact.py --path .agent/artifacts/reviews/review-2026-03-13T1200.md
+python .agent/skills/superpowers-workflow/scripts/write_artifact.py --path .agent/artifacts/reviews/review-<TIMESTAMP>.md
 ```
 
 Provide the review markdown as stdin to the command.

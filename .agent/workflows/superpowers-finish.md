@@ -13,14 +13,16 @@ Output:
 ## Manual validation steps (if applicable)
 
 ## Persist (mandatory)
-After generating the finish content above, you MUST write it to disk:
+Write the finish output to a unique timestamped file:
+1. Obtain current timestamp: `YYYY-MM-DDTHHMM`
+2. Target path: `.agent/artifacts/executions/execution-YYYY-MM-DDTHHMM-finish.md`
 
 1) Copy the full finish markdown output.
 2) Run:
 
 ```bash
-python .agent/skills/superpowers-workflow/scripts/write_artifact.py --path artifacts/superpowers/finish.md
-
+# Example: python .agent/skills/superpowers-workflow/scripts/write_artifact.py --path .agent/artifacts/executions/execution-2026-03-13T1200-finish.md
+python .agent/skills/superpowers-workflow/scripts/write_artifact.py --path .agent/artifacts/executions/execution-<TIMESTAMP>-finish.md
 ```
 
 Provide the finish markdown as stdin to the command.

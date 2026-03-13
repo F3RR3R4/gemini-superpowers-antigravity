@@ -24,11 +24,12 @@ If `{{input}}` is empty or missing, ask the user to restate the task in one sent
 ## Rollback plan
 
 ## Persist (mandatory)
-Write the plan output to:
-- `artifacts/superpowers/plan.md`
+Write the plan output to a unique timestamped file:
+1. Obtain current timestamp: `YYYY-MM-DDTHHMM`
+2. Target path: `.agent/artifacts/plans/plan-YYYY-MM-DDTHHMM.md`
 
 Create the folder if needed.
-After writing, confirm it exists by listing `artifacts/superpowers/`.
+After writing, confirm it exists by listing `.agent/artifacts/plans/`.
 
 ## Approval
 Ask:
@@ -36,7 +37,7 @@ Ask:
 
 If the user replies APPROVED:
 - Do NOT implement yet.
-- Reply: **"Plan approved. Run `/superpowers-execute-plan` to begin implementation."**
+- Reply: **"Plan approved. Run `/execute-plan` to begin implementation."**
 
 ## Persist (mandatory)
 After generating the plan content above, you MUST write it to disk:
@@ -45,13 +46,13 @@ After generating the plan content above, you MUST write it to disk:
 2) Run:
 
 ```bash
-python .agent/skills/superpowers-workflow/scripts/write_artifact.py --path artifacts/superpowers/plan.md
-
+# Example: python .agent/skills/superpowers-workflow/scripts/write_artifact.py --path .agent/artifacts/plans/plan-2026-03-13T1200.md
+python .agent/skills/superpowers-workflow/scripts/write_artifact.py --path .agent/artifacts/plans/plan-<TIMESTAMP>.md
 ```
 
 Provide the plan markdown as stdin to the command.
 
 After writing, confirm it exists by listing artifacts/superpowers/.
 
-If you cannot run the command, say so explicitly and instruct the user to copy/paste the plan output into artifacts/superpowers/plan.md.
+If you cannot run the command, say so explicitly and instruct the user to copy/paste the plan output into the timestamped plan file.
 Do not implement changes in this workflow. Stop after persistence.

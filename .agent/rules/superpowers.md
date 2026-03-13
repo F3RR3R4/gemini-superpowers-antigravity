@@ -2,7 +2,10 @@
 
 These rules apply to ALL work unless the user explicitly opts out.
 
-## 1) Plan gate for non-trivial work
+## 1) Language Rule (Global)
+All generated artifacts, plans, brainstorms, execution reports, and documentation MUST be written in **English**, regardless of the input language used by the user.
+
+## 2) Plan gate for non-trivial work
 If the task is anything beyond a tiny change, do NOT edit code immediately.
 You MUST:
 1) Brainstorm briefly (goal, constraints, risks, acceptance criteria)
@@ -42,11 +45,17 @@ Before final response, do a review pass and list issues by severity:
 - Add timeouts, retries, and idempotency for API automations
 - Fail safe (no silent data loss)
 
-## Artifact persistence (mandatory)
-Any brainstorm, plan, review, or finish output must be written to disk under:
-`artifacts/superpowers/`
+## Artifact persistence (ALWAYS mandatory)
+Any brainstorm, plan, review, or finish output must ALWAYS be written to disk under:
+`.agent/artifacts/`
 
-Do not leave these as IDE-only documents.
+**MANDATORY Naming & Location Convention**:
+- Brainstorms: `.agent/artifacts/brainstorms/plan-YYYY-MM-DDTHHMM-brainstorm.md`
+- Plans: `.agent/artifacts/plans/plan-YYYY-MM-DDTHHMM.md`
+- Executions: `.agent/artifacts/executions/execution-YYYY-MM-DDTHHMM.md`
+- Reviews: `.agent/artifacts/reviews/review-YYYY-MM-DDTHHMM.md`
+
+Do not use generic names or the root `.agent/artifacts/` folder directly.
 After writing, confirm the file exists.
 
 ## Persistence enforcement
