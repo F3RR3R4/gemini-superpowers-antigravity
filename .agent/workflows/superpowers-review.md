@@ -4,6 +4,8 @@ description: Runs a Superpowers-style review pass with severity levels.
 
 # Superpowers Review
 
+All review output MUST be in **English**.
+
 Read and apply the `superpowers-review` skill.
 
 Output:

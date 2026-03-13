@@ -4,6 +4,8 @@ description: Finalize work: verification, summary, follow-ups, manual validation
 
 # Superpowers Finish
 
+All finish output MUST be in **English**.
+
 Read and apply the `superpowers-finish` skill.
 
 Output:

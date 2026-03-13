@@ -4,6 +4,8 @@ description: Superpowers brainstorm. Produces goal/constraints/risks/options/rec
 
 # Superpowers Brainstorm
 
+All brainstorm output MUST be in **English**.
+
 ## Task
 Brainstorm for this task (exactly as provided by the user):
 **{{input}}**

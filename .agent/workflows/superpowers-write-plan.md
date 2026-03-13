@@ -4,6 +4,8 @@ description: Superpowers plan gate. Writes a small-step plan with files + verifi
 
 # Superpowers Write Plan (Gate)
 
+All plan output MUST be in **English**.
+
 ## Task
 Plan for this task (exactly as provided by the user):
 **{{input}}**
